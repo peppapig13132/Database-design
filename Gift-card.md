@@ -1,15 +1,45 @@
 # Gift Card for e-Commerce Project
 :label: MySQL
 
-Supporse `user` table is already defined.
+## About Gift Card System
+A customer can buy a gift card and send it by specific time with desired amount and text.
 
-`giftcard`
-| id | user_id | giftcard_balance | created_at | updated_at |
-| :-: | :-: | :-: | :-: | :-: |
-| INT | INT | DECIMAL(10, 2) | DATETIME | DATETIME |
-| 1 | 24 | 250 | 2024-06-27 12:09:18.608 | 2024-06-27 12:09:18.608 |
+A customer who received this gift card can use the card balance only this platform to purchase the products.
 
-`giftcard_log`
-| id | giftcard_id | change_amount | category | reference_id | status | created_at | updated_at |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| INT| INT| INT | ENUM(PUCHARSE, CONSUME) | INT | ENUM(DRAFT, SUCCESS, FAILED) | DATETIME | DATETIME |
+The gift card has an expiration date(1 year by default), and can't use out of available date.
+
+A gift card consumer should input the email and the gift card code.
+
+_Supporse `user` table is already defined._
+
+### Model: Giftcard
+```
+{
+  id: number,
+  receiver_firstname: string,
+  receiver_lastname: string,
+  receiver_email: string,
+  sender_name: string,
+  sender_email: string,
+  gift_message: string,
+  code: string,
+  amount: number,
+  balance: number,
+  shipping_at: string,
+  created_at: string,
+  updated_at: string,
+  expired_at: string,
+}
+```
+
+### Model: GiftcardLog
+```
+{
+  id: number,
+  giftcard_id: number,
+  order_id: number,
+  status: enum(draft, pending, success, failed, canceled),
+  created_at: number,
+  updated_at: number,
+}
+```
