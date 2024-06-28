@@ -10,6 +10,9 @@ The gift card has an expiration date(1 year by default), and can't use out of av
 
 A gift card consumer should input the email and the gift card code.
 
+1. _Buy a gift card -> A new gift card created in database -> Send email at receiver_
+2. _Buy products with a gift card -> Update the balance of the gift card -> Create a giftcard_log -> Send email at gift card holder with order number, gift card balance, expiration date_
+
 _Supporse `user` table is already defined._
 
 ### Model: Giftcard
