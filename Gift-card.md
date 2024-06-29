@@ -40,7 +40,7 @@ _Supporse `user` table is already defined._
 {
   id: number,
   giftcard_id: number,
-  order_id: number,
+  product_order_id: number,
   status: enum(draft, pending, success, failed, canceled),
   created_at: number,
   updated_at: number,
