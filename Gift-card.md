@@ -41,6 +41,7 @@ _Supporse `user` table is already defined._
   id: number,
   giftcard_id: number,
   product_order_id: number,
+  amount: number,
   status: enum(draft, success, failed, canceled),
   created_at: string,
   updated_at: string,
