@@ -28,6 +28,8 @@ _Supporse `user` table is already defined._
   code: string,
   amount: number,
   balance: number,
+  status: enum(draft, pending, ready_to_use, canceled),
+  note: string,
   shipping_at: string,
   created_at: string,
   updated_at: string,
