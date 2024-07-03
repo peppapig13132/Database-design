@@ -19,6 +19,7 @@ _Supporse `user` table is already defined._
 ```
 {
   id: number,
+  uuid: string,
   receiver_firstname: string,
   receiver_lastname: string,
   receiver_email: string,
